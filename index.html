@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة الذهب في اليمن - تحديث</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7711675599464235" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #f39c12;
+            --background: #f5f6fa;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+            --input-bg: #f8f9fa;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #ecf0f1;
+            --secondary-color: #3498db;
+            --accent-color: #f1c40f;
+            --background: #1a1a1a;
+            --text-color: #ecf0f1;
+            --card-bg: #2d2d2d;
+            --input-bg: #404040;
+            --shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: var(--transition);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+
+        .logo-text h1 {
+            color: var(--secondary-color);
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 800;
+        }
+
+        .logo-text p {
+            margin: 0;
+            font-size: 0.9em;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Button Styles */
+        .btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        /* Input Section */
+        .input-section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .section-title i {
+            font-size: 1.2em;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 0;
+        }
+
+        .input-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .input-label i {
+            color: var(--secondary-color);
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background: var(--input-bg);
+            color: var(--text-color);
+            font-size: 16px;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        input:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        input:read-only {
+            cursor: not-allowed;
+            opacity: 0.8;
+            background: var(--input-bg);
+        }
+
+        /* Results Section */
+        .results-section {
+            margin-bottom: 30px;
+        }
+
+        .karat-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .karat-btn {
+            padding: 10px 20px;
+            background: var(--input-bg);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .karat-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .result-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .result-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        /* Widget Section */
+        .widget-section {
+            margin-bottom: 30px;
+        }
+
+        .widget-toggle {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .widget-container {
+            height: 450px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+            display: none;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .widget-visible {
+            display: block;
+        }
+
+        /* Notices Section */
+        .notices-section {
+            margin-bottom: 30px;
+        }
+
+        .notice-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .notice-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #e74c3c;
+        }
+
+        .notice-header i {
+            font-size: 1.5em;
+        }
+
+        .notice-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            color: #666;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.9em;
+        }
+
+        .developer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Loading Animation */
+        .loader {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loader-spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--secondary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Ads Styles */
+        .ad-container {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .ad-banner {
+            width: 100%;
+            max-width: 970px;
+            height: 90px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            border: 1px dashed #3498db;
+        }
+
+        .ad-banner.large {
+            height: 250px;
+            max-width: 300px;
+        }
+
+        .ad-banner.rectangle {
+            height: 250px;
+            max-width: 300px;
+        }
+
+        .ad-banner.square {
+            height: 250px;
+            max-width: 300px;
+        }
+
+        .ad-banner.mobile {
+            height: 100px;
+            max-width: 320px;
+        }
+
+        .ad-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ad-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        /* Layout with Ads */
+        .main-content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .content-area {
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 300px;
+            flex-shrink: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .header-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .karat-selector {
+                justify-content: center;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+
+            .content-area {
+                order: 1;
+            }
+
+            .ad-sidebar {
+                display: none;
+            }
+
+            .ad-banner.large,
+            .ad-banner.rectangle,
+            .ad-banner.square {
+                height: 100px;
+                max-width: 320px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .sidebar {
+                width: 250px;
+            }
+        }
+
+        /* Tabs for additional functionality */
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            border-bottom: 3px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- إعلان الهيدر -->
+   <!-- <div class="container">
+        <div class="ad-container">
+            <div class="ad-banner mobile">
+                <span>مساحة إعلانية - 320×100</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container"> --> 
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>حاسبة الذهب في اليمن</h1>
+                    <p>أداة متكاملة لحساب أسعار الذهب بالعملات المختلفة</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button class="btn" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                    <span>تبديل السمة</span>
+                </button>
+                <button class="btn btn-accent" onclick="refreshPrices()">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>تحديث الأسعار</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- إعلان بعد الهيدر -->
+     <!--    <div class="ad-container">
+            <div class="ad-banner">
+                <span>مساحة إعلانية - 970×90</span>
+            </div>
+        </div>    --> 
+
+        <!-- الشريط الجانبي للإعلانات (لأجهزة الكمبيوتر) -->
+    <!--    <div class="ad-sidebar">
+            <div class="ad-label">إعلان</div>
+            <div class="ad-banner rectangle">
+                <span>مساحة إعلانية - 300×250</span>
+            </div>
+            <div class="ad-label">إعلان</div>
+            <div class="ad-banner square">
+                <span>مساحة إعلانية - 250×250</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area">     --> 
+                
+                
+                
+                <!-- Tabs -->
+                <div class="tabs">
+                    <div class="tab active" onclick="switchTab('calculator')">الحاسبة</div>
+                    <div class="tab" onclick="switchTab('info')">معلومات الذهب</div>
+                    <div class="tab" onclick="switchTab('guide')">دليل الاستخدام</div>
+                </div>
+
+                <!-- Calculator Tab -->
+                <div id="calculator" class="tab-content active">
+                    <!-- Input Section -->
+                    <div class="input-section">
+                        <div class="section-title">
+                            <i class="fas fa-calculator"></i>
+                            <h2>إدخال البيانات</h2>
+                        </div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    سعر أوقية الذهب بالدولار (USD)
+                                </label>
+                                <input type="number" id="ouncePrice" value="4110" step="1">
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    سعر الريال اليمني القديم (لكل دولار)
+                                </label>
+                                <input type="number" id="yerOldRate" value="536">
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    سعر الريال اليمني الجديد (لكل دولار)
+                                </label>
+                                <input type="number" id="yerNewRate" value="1632">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- إعلان بعد قسم الإدخال -->
+                 <!--  
+                    
+                    <div class="ad-container">
+                        <div class="ad-banner mobile">
+                            <span>مساحة إعلانية - 320×100</span>
+                        </div>
+                    </div>
+                    
+                     --> 
+                     
+ 
+                    <!-- Results Section -->
+                    <div class="results-section">
+                        <div class="section-title">
+                            <i class="fas fa-chart-line"></i>
+                            <h2>النتائج</h2>
+                        </div>
+                        
+                        <div class="karat-selector">
+                            <div class="karat-btn active" data-karat="24">عيار 24</div>
+                            <div class="karat-btn" data-karat="21">عيار 21</div>
+                            <div class="karat-btn" data-karat="18">عيار 18</div>
+                            <div class="karat-btn" data-karat="22">عيار 22</div>
+                            <div class="karat-btn" data-karat="14">عيار 14</div>
+                        </div>
+
+                        <div class="loader" id="resultsLoader">
+                            <div class="loader-spinner"></div>
+                            <p>جاري حساب الأسعار...</p>
+                        </div>
+
+                        <div class="results" id="resultsContainer"></div>
+                    </div>
+                    
+  
+                    <!-- إعلان بعد النتائج -->
+                    <!-- 
+                    <div class="ad-container">
+                        <div class="ad-banner">
+                            <span>مساحة إعلانية - 970×90</span>
+                        </div>
+                    </div>    --> 
+
+                    <!-- Widget Section -->
+                    <div class="widget-section">
+                        <button class="btn btn-outline widget-toggle" onclick="toggleWidget()" id="widgetToggleBtn">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>عرض سعر الأوقية الذهب بالدولار مباشر</span>
+                        </button>
+
+                        <div class="widget-container" id="widgetContainer">
+                            <div class="tradingview-widget-container">
+                                <div class="tradingview-widget-container__widget"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+                                {
+                                    "symbols": [[ "OANDA:XAUUSD|ALL" ]],
+                                    "chartOnly": false,
+                                    "width": "100%",
+                                    "height": "100%",
+                                    "locale": "en",
+                                    "colorTheme": "dark",
+                                    "autosize": true,
+                                    "showVolume": false,
+                                    "showMA": false,
+                                    "hideDateRanges": false,
+                                    "hideMarketStatus": false,
+                                    "hideSymbolLogo": false,
+                                    "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                    "fontFamily": "Tajawal, sans-serif",
+                                    "fontSize": "14",
+                                    "noTimeScale": false,
+                                    "valuesTracking": "1",
+                                    "changeMode": "price-and-percent",
+                                    "chartType": "area",
+                                    "maLineColor": "#3498db",
+                                    "maLineWidth": 1,
+                                    "maLength": 9,
+                                    "headerFontSize": "16",
+                                    "lineWidth": 2,
+                                    "lineType": 0
+                                }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Tab -->
+                <div id="info" class="tab-content">
+                    <div class="notice-card">
+                        <div class="section-title">
+                            <i class="fas fa-info-circle"></i>
+                            <h2>معلومات عن الذهب</h2>
+                        </div>
+                        <div class="notice-content">
+                            <p><strong>العيارات الشائعة للذهب:</strong></p>
+                            <ul style="padding-right: 20px; margin-bottom: 15px;">
+                                <li>عيار 24: أنقى أنواع الذهب (99.9% ذهب خالص)</li>
+                                <li>عيار 22: يحتوي على 91.7% ذهب خالص</li>
+                                <li>عيار 21: يحتوي على 87.5% ذهب خالص (الأكثر شيوعاً في المجوهرات العربية)</li>
+                                <li>عيار 18: يحتوي على 75% ذهب خالص</li>
+                                <li>عيار 14: يحتوي على 58.3% ذهب خالص</li>
+                            </ul>
+                            <p><strong>نصائح عند شراء الذهب:</strong></p>
+                            <ul style="padding-right: 20px;">
+                                <li>تأكد من ختم العيار على القطعة</li>
+                                <li>اطلب فاتورة شراء موثقة</li>
+                                <li>قارن الأسعار بين عدة محلات</li>
+                                <li>تعرف على سعر الذهب العالمي قبل الشراء</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- إعلان في قسم المعلومات -->
+                    
+                    <!-- 
+                    <div class="ad-container">
+                        <div class="ad-banner mobile">
+                            <span>مساحة إعلانية - 320×100</span>
+                        </div>
+                    </div>
+                </div>
+                
+                 🚨--> 
+                
+
+                <!-- Guide Tab -->
+                <div id="guide" class="tab-content">
+                    <div class="notice-card">
+                        <div class="section-title">
+                            <i class="fas fa-book"></i>
+                            <h2>دليل استخدام الحاسبة</h2>
+                        </div>
+                        <div class="notice-content">
+                            <p><strong>خطوات استخدام الحاسبة:</strong></p>
+                            <ol style="padding-right: 20px; margin-bottom: 15px;">
+                                <li>أدخل سعر أوقية الذهب بالدولار (يمكنك الحصول عليه من قسم العرض المباشر)</li>
+                                <li>أدخل سعر صرف الريال اليمني القديم مقابل الدولار</li>
+                                <li>أدخل سعر صرف الريال اليمني الجديد مقابل الدولار</li>
+                                <li>اختر العيار المطلوب من الخيارات المتاحة</li>
+                                <li>ستظهر الأسعار تلقائياً بالعملات المختلفة</li>
+                            </ol>
+                            <p><strong>ملاحظات هامة:</strong></p>
+                            <ul style="padding-right: 20px;">
+                                <li>الأسعار المعروضة تقريبية وقد تختلف قليلاً في محلات الذهب</li>
+                                <li>أسعار الصرف متغيرة ويجب تحديثها دورياً</li>
+                                <li>هذه الأداة للإرشاد فقط وليست بديلاً عن الاستشارة المالية المتخصصة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notices Section -->
+                <div class="notices-section">
+                    <div class="notice-card">
+                        <div class="notice-header">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>تعليمات هامة</h3>
+                        </div>
+                        <div class="notice-content">
+                            <p>⛔ لمعرفة الأسعار المباشرة:</p>
+                            <p>قم بالنقر على: "عرض سعر الأوقية الذهب بالدولار مباشر"</p>
+                            <p>قم بأخذ السعر وكتابته في حقل "سعر أوقية الذهب بالدولار"</p>
+                            <p>⚡ أسعار صرف الدولار مقابل الريال اليمني تقريبية وليست دقيقة</p>
+                            <p>قم بتعديل الأسعار في بداية الموقع للحصول على نتائج دقيقة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشريط الجانبي للمحتوى (لأجهزة الكمبيوتر) -->
+          <!--   
+            <div class="sidebar">
+                 --> 
+                 
+             <!--  
+                <!-- إعلان في الشريط الجانبي -->
+                <!--  
+                <div class="ad-container">
+                    <div class="ad-label">إعلان</div>
+                    <div class="ad-banner large">
+                        <span>مساحة إعلانية - 300×600</span>
+                    </div>
+                </div> 
+                
+         🚨        --> 
+
+                <!-- معلومات إضافية -->
+                <div class="notice-card">
+                    <div class="section-title">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>إعلانات</h3>
+                    </div>
+                    <div class="notice-content">
+                        <p>هذه المساحة مخصصة للإعلانات التي تدعم الموقع</p>
+                        <p>الإعلانات تساعدنا على الاستمرار في تقديم الخدمة مجاناً</p>
+                    </div>
+                </div>
+
+                <!-- إعلان إضافي في الشريط الجانبي -->
+                <!-- 
+                <div class="ad-container">
+                    <div class="ad-label">إعلان</div>
+                    <div class="ad-banner rectangle">
+                        <span>مساحة إعلانية - 300×250</span>
+                    </div>
+                </div>
+            </div>
+        </div> 
+         --> 
+
+        <!-- إعلان قبل الفوتر -->
+        <!--  
+        <div class="ad-container">
+            <div class="ad-banner">
+                <span>مساحة إعلانية - 970×90</span>
+            </div>
+        </div>
+ --> 
+        <!-- Footer -->
+        <footer>
+            <p>تم التطوير بدقة باستخدام أحدث التقنيات</p>
+            <div class="developer">
+                <i class="fas fa-laptop-code"></i>
+                <span>بواسطة المطور موسى سري</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // البيانات الأساسية
+        const karats = [
+            {name: 'عيار 24', value: 24, icon: 'fas fa-gem'},
+            {name: 'عيار 22', value: 22, icon: 'fas fa-star'},
+            {name: 'عيار 21', value: 21, icon: 'fas fa-crown'},
+            {name: 'عيار 18', value: 18, icon: 'fas fa-ring'},
+            {name: 'عيار 14', value: 14, icon: 'fas fa-medal'}
+        ];
+
+        const OUNCE_TO_GRAM = 31.1034768;
+        let currentKarat = 24;
+
+        // دوال الحساب
+        function calculateGramPrice(ouncePrice, karat) {
+            return (ouncePrice * karat) / (OUNCE_TO_GRAM * 24);
+        }
+
+        function formatCurrency(num) {
+            return num.toFixed(3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // تحديث الحسابات
+        function updateCalculations() {
+            const ouncePrice = parseFloat(document.getElementById('ouncePrice').value) || 0;
+            const yerOld = parseFloat(document.getElementById('yerOldRate').value) || 0;
+            const yerNew = parseFloat(document.getElementById('yerNewRate').value) || 0;
+            const sarRate = 3.75;
+
+            // عرض مؤشر التحميل
+            document.getElementById('resultsLoader').style.display = 'block';
+            document.getElementById('resultsContainer').innerHTML = '';
+
+            // محاكاة التأخير للحصول على تجربة أفضل
+            setTimeout(() => {
+                const resultsDiv = document.getElementById('resultsContainer');
+                resultsDiv.innerHTML = '';
+
+                // إظهار النتائج للعيار المحدد فقط
+                const selectedKarat = karats.find(k => k.value === currentKarat);
+                if (selectedKarat) {
+                    const usdPrice = calculateGramPrice(ouncePrice, selectedKarat.value);
+                    
+                    const resultHTML = `
+                        <div class="result-card">
+                            <div class="result-title">
+                                <i class="${selectedKarat.icon}"></i>
+                                <h3>${selectedKarat.name}</h3>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    سعر الجرام (USD)
+                                </label>
+                                <input type="text" value="${formatCurrency(usdPrice)} $" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-flag"></i>
+                                    الريال السعودي (SAR)
+                                </label>
+                                <input type="text" value="${formatCurrency(usdPrice * sarRate)} ر.س" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-coins"></i>
+                                    الريال اليمني (قديم)
+                                </label>
+                                <input type="text" value="${formatCurrency(usdPrice * yerOld)} ﷼" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">
+                                    <i class="fas fa-coins"></i>
+                                    الريال اليمني (جديد)
+                                </label>
+                                <input type="text" value="${formatCurrency(usdPrice * yerNew)} ﷼" readonly>
+                            </div>
+                        </div>
+                    `;
+                    
+                    resultsDiv.innerHTML = resultHTML;
+                }
+
+                // إخفاء مؤشر التحميل
+                document.getElementById('resultsLoader').style.display = 'none';
+            }, 800);
+        }
+
+        // تبديل السمة
+        function toggleTheme() {
+            const body = document.body;
+            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            
+            const themeIcon = document.querySelector('.fa-moon');
+            if (newTheme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+            
+            // حفظ التفضيل في التخزين المحلي
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // تبديل الويدجت
+        function toggleWidget() {
+            const widgetContainer = document.getElementById('widgetContainer');
+            const toggleBtn = document.getElementById('widgetToggleBtn');
+            
+            widgetContainer.classList.toggle('widget-visible');
+            if (widgetContainer.classList.contains('widget-visible')) {
+                toggleBtn.innerHTML = '<i class="fas fa-eye-slash"></i><span>إخفاء سعر الأوقية الذهب مقابل الدولار</span>';
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-chart-bar"></i><span>عرض سعر الأوقية الذهب بالدولار مباشر</span>';
+            }
+        }
+
+        // تحديث الأسعار (محاكاة)
+        function refreshPrices() {
+            const refreshBtn = document.querySelector('.btn-accent');
+            const originalText = refreshBtn.innerHTML;
+            
+            refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري التحديث...</span>';
+            refreshBtn.disabled = true;
+            
+            // محاكاة عملية التحديث
+            setTimeout(() => {
+                // في التطبيق الحقيقي، هنا سيتم جلب البيانات من مصدر خارجي
+                refreshBtn.innerHTML = originalText;
+                refreshBtn.disabled = false;
+                
+                // عرض رسالة نجاح
+                alert('تم تحديث الأسعار بنجاح!');
+            }, 2000);
+        }
+
+        // تبديل التبويبات
+        function switchTab(tabId) {
+            // إخفاء جميع المحتويات
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // إلغاء تنشيط جميع التبويبات
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // إظهار المحتوى المحدد وتنشيط التبويب
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحميل السمة المحفوظة
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            // تحديث أيقونة السمة
+            const themeIcon = document.querySelector('.fa-moon');
+            if (savedTheme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            }
+            
+            // إضافة مستمعي الأحداث
+            document.getElementById('ouncePrice').addEventListener('input', updateCalculations);
+            document.getElementById('yerOldRate').addEventListener('input', updateCalculations);
+            document.getElementById('yerNewRate').addEventListener('input', updateCalculations);
+            
+            // إضافة مستمعي الأحداث لأزرار العيارات
+            document.querySelectorAll('.karat-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.karat-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentKarat = parseInt(this.getAttribute('data-karat'));
+                    updateCalculations();
+                });
+            });
+            
+            // تشغيل الحساب الأولي
+            updateCalculations();
+        });
+    </script>
+</body>
+</html>
